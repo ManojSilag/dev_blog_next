@@ -1,10 +1,6 @@
-import React from 'react'
-import Layout from '../../components/Layout'
 
-export default function BlogPage() {
-  return (
-    <Layout>
-        <h1>Blog</h1>
-    </Layout>
-  )
-}
+import BlogPage, {getStaticProps}  from "./page/[page_index]";
+
+export { getStaticProps }
+
+export default BlogPage
