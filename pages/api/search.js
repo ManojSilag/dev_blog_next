@@ -4,7 +4,8 @@ export default function handler(req, res) {
   let posts;
 
   if (process.env.NODE_ENV === "production") {
-    //
+    // fetch from cache
+    posts = require('../../cache/data').posts
   } else {
     posts = getPosts();
   }
