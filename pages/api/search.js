@@ -3,8 +3,9 @@ import { getPosts } from "@/lib/posts";
 export default function handler(req, res) {
   let posts;
 
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "Production") {
     // fetch from cache
+    // console.log('FROM CACHE')
     posts = require('../../cache/data').posts
   } else {
     posts = getPosts();
